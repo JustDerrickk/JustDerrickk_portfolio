@@ -4,6 +4,5 @@ Thumbs.db
 *.swp
 
 # Docker / env
-docker-compose.yml
 *.env
-Dockerfile
+
