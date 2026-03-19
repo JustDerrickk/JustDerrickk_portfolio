@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  portfolio-prod:
+    build: .
+    image: portfolio:latest
+    container_name: portfolio-prod
+    ports:
+      - "8081:80"
+    restart: always
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    networks:
+      - rungenius-network
+    depends_on:
+      - backend
