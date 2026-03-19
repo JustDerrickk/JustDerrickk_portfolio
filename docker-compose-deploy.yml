@@ -8,6 +8,8 @@ services:
     ports:
       - "8081:80"
     restart: always
+    networks:
+      - portfolio-network
   cloudflared:
     image: cloudflare/cloudflared:latest
     restart: always
@@ -15,4 +17,10 @@ services:
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     depends_on:
-      - backend
+      - portfolio-prod
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
