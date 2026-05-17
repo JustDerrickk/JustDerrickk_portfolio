@@ -628,6 +628,11 @@ strong { color: var(--accent); }
     color: #fff;
 }
 
+.roadmap-item.in-progress .roadmap-checkbox {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .roadmap-content h4 {
     font-size: 0.95rem;
     font-weight: 600;
@@ -636,6 +641,10 @@ strong { color: var(--accent); }
 
 .roadmap-item.completed .roadmap-content h4 {
     color: var(--accent);
+}
+
+.roadmap-item.in-progress .roadmap-content h4 {
+    color: var(--text-main);
 }
 
 .roadmap-content p {
